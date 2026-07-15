@@ -340,7 +340,7 @@ const projectData = [
     progress: "供应链打版中，计划 1-2 周内试播。",
     seeking: ["一号位"],
     direction: "AI 玩具 / 明星周边 / 内容电商",
-    suitableFor: ["带货主播", "五月天粉丝", "周边玩家", "内容电商玩家"],
+    suitableFor: ["带货主播", "追星群体", "周边玩家", "内容电商玩家"],
     tags: ["开展中"],
   },
   {
