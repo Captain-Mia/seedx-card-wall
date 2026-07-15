@@ -56,7 +56,7 @@ const peopleData = [
     "number": "SeedX 003",
     "name": "铁拐李",
     "city": "杭州·滨江",
-    "mbti": "INFJ",
+    "mbti": "ISFJ",
     "status": "Gap 全职搞",
     "doing": "在做项目孵化，擅长将想法拆解为产品策略，并通过运营等方式推动项目从 0 到 1 落地。",
     "value": [
