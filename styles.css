@@ -420,6 +420,11 @@ h1 {
   color: #2859a7;
 }
 
+.chip-seeking {
+  background: #fff1f2;
+  color: #9f1239;
+}
+
 .chip-gray {
   background: var(--gray-soft);
   color: var(--gray);

@@ -314,6 +314,7 @@ const projectData = [
     stageKey: "launch",
     summary: "记录 Gap 人群的真实经历和职业故事。",
     progress: "1v1 访谈已启动，近期陆续约拍。",
+    seeking: ["访谈对象"],
     direction: "Gap 叙事 / 纪实内容",
     suitableFor: ["Gap 期伙伴", "转型探索者", "愿意分享的人"],
     tags: ["开展中"],
@@ -325,6 +326,7 @@ const projectData = [
     stageKey: "prep",
     summary: "围绕男装品类做直播电商。",
     progress: "供应链、直播间、主播已就位，一周内启动试播。",
+    seeking: ["主播"],
     direction: "电商 / 男装 / 直播带货",
     suitableFor: ["电商运营", "服装从业者", "内容电商玩家"],
     tags: ["开展中"],
@@ -336,6 +338,7 @@ const projectData = [
     stageKey: "supply",
     summary: "AI 毛绒玩具与明星周边的内容电商。",
     progress: "供应链打版中，计划 1-2 周内试播。",
+    seeking: ["一号位"],
     direction: "AI 玩具 / 明星周边 / 内容电商",
     suitableFor: ["带货主播", "五月天粉丝", "周边玩家", "内容电商玩家"],
     tags: ["开展中"],
@@ -347,6 +350,7 @@ const projectData = [
     stageKey: "team",
     summary: "用摆摊做低成本创业和线下实践。",
     progress: "首批小队已组建，已有小甜水、调酒、驻唱品类。",
+    seeking: ["摆摊搭子", "新场地"],
     direction: "摆摊实践 / 低成本创业",
     suitableFor: ["手作玩家", "摆摊新手", "Gap 期伙伴"],
     tags: ["开展中"],
@@ -358,6 +362,7 @@ const projectData = [
     stageKey: "coop",
     summary: "正规国企背景的人才培训招生项目。",
     progress: "合作模式已明确，正在寻找生源和渠道资源。",
+    seeking: ["兼职"],
     direction: "人才培训 / 副业合作",
     suitableFor: ["副业探索者", "渠道型伙伴"],
     tags: ["开展中"],
@@ -369,6 +374,7 @@ const projectData = [
     stageKey: "trial",
     summary: "面向社区场景的 AI 培训项目。",
     progress: "已与楼友会 OPC 社区达成合作，预计 1-2 周内试课。",
+    seeking: ["讲师"],
     direction: "AI 培训 / 社区课程",
     suitableFor: ["AI 讲师", "企业培训者", "知识博主"],
     tags: ["开展中"],
@@ -383,6 +389,42 @@ const projectData = [
     direction: "非遗出海 / 内容电商",
     suitableFor: ["非遗爱好者", "内容电商玩家", "技术建站者"],
     tags: ["开展中"],
+  },
+  {
+    order: 8,
+    name: "音乐疗愈项目",
+    stage: "团队组建期",
+    stageKey: "team",
+    summary: "结合音乐疗愈与投资话题的内容项目，招募核心岗位。",
+    progress: "正在招募 UI/UX 设计师和内容生成人员，预计需要 3 人。",
+    seeking: [],
+    direction: "音乐疗愈 / 投资内容 / 内容创作",
+    suitableFor: ["UI/UX 设计师", "内容创作者", "疗愈领域从业者", "投资爱好者"],
+    tags: ["招募中"],
+  },
+  {
+    order: 9,
+    name: "综合疗愈 IP 项目",
+    stage: "IP 孵化期",
+    stageKey: "coop",
+    summary: "为 100 位不同类型的疗愈老师打造个人 IP 并卖课。",
+    progress: "正在招募和筛选疗愈老师，搭建 IP 孵化和课程体系。",
+    seeking: [],
+    direction: "个人 IP / 疗愈课程 / 知识付费",
+    suitableFor: ["疗愈老师", "课程运营", "内容创作者", "IP 操盘手"],
+    tags: ["招募中"],
+  },
+  {
+    order: 10,
+    name: "工艺助盲项目",
+    stage: "志愿者招募期",
+    stageKey: "trial",
+    summary: "通过工艺活动帮助视障群体，招募志愿者并提供小额补贴。",
+    progress: "正在招募志愿者，提供小额补贴支持。",
+    seeking: [],
+    direction: "公益 / 助盲 / 工艺活动",
+    suitableFor: ["志愿者", "公益人士", "手工艺爱好者"],
+    tags: ["招募中"],
   },
 ];
 
@@ -542,6 +584,12 @@ function renderProjectCard(project) {
         ${sectionTitle("⚡", "项目进度")}
         <p class="project-box project-box-progress">${escapeHtml(project.progress)}</p>
       </section>
+      ${project.seeking?.length ? `
+        <section class="project-section">
+          ${sectionTitle("🔎", "正在寻找")}
+          <div class="chip-row">${chipList(project.seeking, "chip-seeking")}</div>
+        </section>
+      ` : ""}
       <section class="project-section">
         ${sectionTitle(icons.compass, "项目方向")}
         <div class="chip-row">${chipList(splitDirection(project.direction), "chip-blue")}</div>
