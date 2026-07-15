@@ -416,7 +416,7 @@ const projectData = [
   },
   {
     order: 10,
-    name: "工艺助盲项目",
+    name: "公益助盲项目",
     stage: "志愿者招募期",
     stageKey: "trial",
     summary: "通过工艺活动帮助视障群体。",
