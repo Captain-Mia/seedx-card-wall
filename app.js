@@ -309,7 +309,7 @@ const peopleData = [
     "name": "hisoka",
     "city": "嘉兴/上海",
     "mbti": "ENFJ",
-    "status": "新手ai小白刚入行",
+    "status": "新手ai小白",
     "doing": "产品经理。",
     "value": [
       "创意",
