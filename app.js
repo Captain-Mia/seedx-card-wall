@@ -303,6 +303,29 @@ const peopleData = [
       "其他合适伙伴"
     ],
     "tags": []
+  },
+  {
+    "number": "SeedX 013",
+    "name": "hisoka",
+    "city": "嘉兴/上海",
+    "mbti": "ENFJ",
+    "status": "新手ai小白刚入行",
+    "doing": "产品经理。",
+    "value": [
+      "创意",
+      "供应链",
+      "web3"
+    ],
+    "interests": [
+      "技术",
+      "AI Agent",
+      "创意落地"
+    ],
+    "lookingFor": [
+      "技术合伙人",
+      "运营合伙人"
+    ],
+    "tags": []
   }
 ];
 
