@@ -393,7 +393,7 @@ const peopleData = [
     "number": "SeedX 017",
     "name": "流云端",
     "city": "杭州·余杭",
-    "mbti": "快乐小狗",
+    "mbti": "ENFP",
     "status": "全职牛马",
     "doing": "AI产品运营、AI社区建联",
     "value": [
@@ -452,7 +452,7 @@ const peopleData = [
   },
   {
     "number": "SeedX 020",
-    "name": "范式",
+    "name": "范范",
     "city": "杭州·上城",
     "mbti": "/",
     "status": "Gap全职搞",
