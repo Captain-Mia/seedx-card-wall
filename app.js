@@ -435,7 +435,7 @@ const peopleData = [
     "city": "杭州·拱墅",
     "mbti": "/",
     "status": "Gap全职搞",
-    "doing": "",
+    "doing": "探索中",
     "value": [
       "接法事、风水堪舆、批八字"
     ],
@@ -503,7 +503,7 @@ const peopleData = [
     "city": "杭州·钱塘",
     "mbti": "INTP",
     "status": "Gap躺平",
-    "doing": "",
+    "doing": "探索中",
     "value": [
       "写文案？帮出片",
       "能露脸、能负责拍摄"
@@ -522,7 +522,7 @@ const peopleData = [
     "city": "杭州·余杭",
     "mbti": "/",
     "status": "边Gap边做",
-    "doing": "",
+    "doing": "探索中",
     "value": [
       "摄影、拍摄、剪辑",
       "能拍摄剪辑、可露脸"
@@ -542,7 +542,7 @@ const peopleData = [
     "city": "杭州·萧山",
     "mbti": "ENFP",
     "status": "纯新手想入行",
-    "doing": "",
+    "doing": "探索中",
     "value": [
       "暂无；可露脸、能负责拍摄剪辑"
     ],
@@ -678,7 +678,7 @@ const peopleData = [
     "city": "杭州·萧山",
     "mbti": "/",
     "status": "待业可全职搞",
-    "doing": "",
+    "doing": "探索中",
     "value": [
       "会拍摄和剪辑",
       "有设备大疆、CCD、Go3S",
@@ -704,7 +704,7 @@ const peopleData = [
     "city": "杭州·萧山",
     "mbti": "/",
     "status": "Gap期",
-    "doing": "",
+    "doing": "探索中",
     "value": [
       "业务 HRBP 经理",
       "13 年从业经验",
@@ -745,7 +745,7 @@ const peopleData = [
     "city": "杭州·拱墅",
     "mbti": "/",
     "status": "刚开始Gap",
-    "doing": "",
+    "doing": "探索中",
     "value": [
       "产品交付",
       "懂一点销售",
@@ -767,7 +767,7 @@ const peopleData = [
     "city": "杭州·萧山",
     "mbti": "/",
     "status": "兼职在做",
-    "doing": "",
+    "doing": "探索中",
     "value": [
       "会剪辑",
       "可露脸",
@@ -787,7 +787,7 @@ const peopleData = [
     "city": "杭州·拱墅",
     "mbti": "/",
     "status": "找工作",
-    "doing": "",
+    "doing": "探索中",
     "value": [
       "拍摄剪辑",
       "能负责拍摄剪辑"
@@ -806,7 +806,7 @@ const peopleData = [
     "city": "杭州·上城",
     "mbti": "/",
     "status": "Gap迷茫期",
-    "doing": "",
+    "doing": "探索中",
     "value": [
       "文案撰写",
       "图文排版",
@@ -854,7 +854,7 @@ const peopleData = [
     "city": "杭州·拱墅",
     "mbti": "/",
     "status": "兼职",
-    "doing": "",
+    "doing": "探索中",
     "value": [
       "UI/UX 设计",
       "活动策划执行",
@@ -877,7 +877,7 @@ const peopleData = [
     "city": "海宁·盐仓",
     "mbti": "/",
     "status": "离职",
-    "doing": "",
+    "doing": "探索中",
     "value": [
       "数据分析"
     ],
@@ -895,7 +895,7 @@ const peopleData = [
     "city": "杭州·拱墅",
     "mbti": "/",
     "status": "待业中/纯新手想尝试新方向",
-    "doing": "",
+    "doing": "探索中",
     "value": [
       "UI 设计",
       "策划",
@@ -925,7 +925,7 @@ const peopleData = [
     "city": "杭州·拱墅",
     "mbti": "/",
     "status": "筹备",
-    "doing": "",
+    "doing": "探索中",
     "value": [
       "5年以上短视频运营经验",
       "全栈运营",
@@ -951,7 +951,7 @@ const peopleData = [
     "city": "杭州·余杭",
     "mbti": "/",
     "status": "Gap全职可兼职做",
-    "doing": "",
+    "doing": "探索中",
     "value": [
       "烘焙美食技能",
       "可露脸",
@@ -972,7 +972,7 @@ const peopleData = [
     "city": "杭州·余杭",
     "mbti": "/",
     "status": "Gap全职搞，纯新手想入行",
-    "doing": "",
+    "doing": "探索中",
     "value": [
       "可露脸"
     ],
@@ -1017,7 +1017,7 @@ const peopleData = [
     "city": "杭州·上城",
     "mbti": "/",
     "status": "Gap期",
-    "doing": "",
+    "doing": "探索中",
     "value": [
       "活动策划",
       "设计"
@@ -1036,7 +1036,7 @@ const peopleData = [
     "city": "杭州·滨江",
     "mbti": "/",
     "status": "纯新手想入行",
-    "doing": "",
+    "doing": "探索中",
     "value": [
       "工程造价经验",
       "施工队伍资源",
@@ -1058,7 +1058,7 @@ const peopleData = [
     "city": "杭州·余杭",
     "mbti": "/",
     "status": "纯新手想入行",
-    "doing": "",
+    "doing": "探索中",
     "value": [
       "平面设计",
       "手绘",
@@ -1081,7 +1081,7 @@ const peopleData = [
     "city": "杭州·临平",
     "mbti": "/",
     "status": "Gap全职、纯新手想入行",
-    "doing": "",
+    "doing": "探索中",
     "value": [
       "花艺技能",
       "有充足时间学习不同技能",
@@ -1105,7 +1105,7 @@ const peopleData = [
     "city": "杭州·西湖",
     "mbti": "/",
     "status": "Gap全职搞兼职搞都可以",
-    "doing": "",
+    "doing": "探索中",
     "value": [
       "交换机路由器设置调试",
       "企业组网方案设计",
@@ -1132,7 +1132,7 @@ const peopleData = [
     "city": "杭州·萧山",
     "mbti": "/",
     "status": "Gap创业探索",
-    "doing": "",
+    "doing": "探索中",
     "value": [
       "十年 TOB 品牌运营经验",
       "内容体系搭建",
@@ -1164,7 +1164,7 @@ const peopleData = [
     "city": "杭州·萧山",
     "mbti": "/",
     "status": "个人OPC/Gap兼职",
-    "doing": "",
+    "doing": "探索中",
     "value": [
       "IP账号策划",
       "视频编导",
@@ -1197,7 +1197,7 @@ const peopleData = [
     "city": "杭州·中泰",
     "mbti": "/",
     "status": "Gap全职搞",
-    "doing": "",
+    "doing": "探索中",
     "value": [
       "脚本",
       "拍摄",
@@ -1221,7 +1221,7 @@ const peopleData = [
     "city": "杭州·西湖",
     "mbti": "/",
     "status": "Gap全职搞",
-    "doing": "",
+    "doing": "探索中",
     "value": [
       "用户增长运营",
       "社会调查研究",
@@ -1248,7 +1248,7 @@ const peopleData = [
     "city": "杭州·余杭",
     "mbti": "/",
     "status": "Gap全职搞",
-    "doing": "",
+    "doing": "探索中",
     "value": [
       "体制内工作经验",
       "会烹饪",
