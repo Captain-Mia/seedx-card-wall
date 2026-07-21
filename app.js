@@ -1305,6 +1305,65 @@ const peopleData = [
       "不在国内卷"
     ],
     "tags": []
+  },
+  {
+    "number": "SeedX 057",
+    "name": "肖肖",
+    "city": "杭州·滨江",
+    "mbti": "ENFJ",
+    "status": "在职兼职做",
+    "doing": "目前在尝试用AI跑通电商带货的渠道",
+    "value": [
+      "内容运营方向",
+      "最前端的AI应用"
+    ],
+    "interests": [
+      "AI Agent",
+      "IP 孵化",
+      "跨境电商"
+    ],
+    "lookingFor": [
+      "运营合伙人"
+    ],
+    "tags": []
+  },
+  {
+    "number": "SeedX 058",
+    "name": "Kolot",
+    "city": "杭州·临平",
+    "mbti": "ENFP",
+    "status": "数字游民",
+    "doing": "AI+项目工作",
+    "value": [
+      "全栈极客",
+      "丰满的情绪价值"
+    ],
+    "interests": [
+      "一切和AI相关的"
+    ],
+    "lookingFor": [
+      "各种朋友",
+      "各种沟通"
+    ],
+    "tags": []
+  },
+  {
+    "number": "SeedX 059",
+    "name": "小宋",
+    "city": "杭州",
+    "mbti": "INTP",
+    "status": "创业中",
+    "doing": "女装批发",
+    "value": [
+      "货源渠道"
+    ],
+    "interests": [
+      "能赚钱的都感兴趣"
+    ],
+    "lookingFor": [
+      "各行各业都可以"
+    ],
+    "tags": []
   }
 ];
 
