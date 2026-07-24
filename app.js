@@ -1483,6 +1483,125 @@ const peopleData = [
       "运营伙伴"
     ],
     "tags": []
+  },
+  {
+    "number": "SeedX 065",
+    "name": "柳噔噔",
+    "city": "杭州·拱墅",
+    "mbti": "INFJ",
+    "status": "自由职业者（培训咨询）",
+    "doing": "在B端的培训咨询行业，做售前及交付；同时准备用AI开发行业相关应用。",
+    "value": [
+      "活动策划",
+      "B端讲师资源",
+      "代码解决方案"
+    ],
+    "interests": [
+      "线下活动",
+      "应用开发"
+    ],
+    "lookingFor": [
+      "有趣的小伙伴"
+    ],
+    "tags": []
+  },
+  {
+    "number": "SeedX 066",
+    "name": "蛋卷",
+    "city": "杭州·余杭",
+    "mbti": "ENFJ",
+    "status": "Gap",
+    "doing": "兼职剪辑、尝试自媒体中",
+    "value": [
+      "活动策划",
+      "剪辑"
+    ],
+    "interests": [
+      "疗愈",
+      "宠物周边",
+      "IP 孵化",
+      "跨境电商",
+      "自媒体",
+      "线下活动"
+    ],
+    "lookingFor": [
+      "技术伙伴",
+      "主播",
+      "线下活动伙伴"
+    ],
+    "tags": []
+  },
+  {
+    "number": "SeedX 067",
+    "name": "David",
+    "city": "杭州·西湖·五常港",
+    "mbti": "INTJ",
+    "status": "OPC创业中",
+    "doing": "桌面机器人",
+    "value": [
+      "产品授权",
+      "跨境电商授权",
+      "商标授权",
+      "代理权"
+    ],
+    "interests": [
+      "AI硬件",
+      "Agent"
+    ],
+    "lookingFor": [
+      "技术合伙人"
+    ],
+    "tags": []
+  },
+  {
+    "number": "SeedX 068",
+    "name": "刑侦K",
+    "city": "杭州·拱墅",
+    "mbti": "ENFP",
+    "status": "纯新手想入行",
+    "doing": "探索有意思的工作",
+    "value": [
+      "学得快"
+    ],
+    "interests": [
+      "AI",
+      "跨境电商",
+      "创意软件",
+      "线下活动"
+    ],
+    "lookingFor": [
+      "技术合伙人",
+      "剪辑伙伴",
+      "主播",
+      "选品伙伴",
+      "运营合伙人"
+    ],
+    "tags": []
+  },
+  {
+    "number": "SeedX 069",
+    "name": "小希",
+    "city": "杭州·余杭",
+    "mbti": "INTJ",
+    "status": "在职",
+    "doing": "在软件公司做产品运营",
+    "value": [
+      "知识付费项目经验",
+      "工作分享",
+      "知识分享"
+    ],
+    "interests": [
+      "AI Agent",
+      "提效工具",
+      "自媒体"
+    ],
+    "lookingFor": [
+      "产品经理",
+      "转行法学生",
+      "自媒体伙伴",
+      "产品运营"
+    ],
+    "tags": []
   }
 ];
 
