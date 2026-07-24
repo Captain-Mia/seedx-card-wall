@@ -38,6 +38,16 @@
       </section>
 
       <section id="peoplePanel" class="panel is-active" aria-label="人物图鉴">
+        <div class="people-tools">
+          <label class="search-box" for="peopleSearch">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true">
+              <circle cx="11" cy="11" r="8" />
+              <path d="m21 21-4.35-4.35" />
+            </svg>
+            <input id="peopleSearch" type="search" placeholder="搜索姓名、城市、技能、方向、想链接..." autocomplete="off" />
+          </label>
+        </div>
+        <p class="empty-state" id="peopleEmpty" hidden>没有找到匹配的伙伴</p>
         <div class="card-grid" id="peopleGrid"></div>
       </section>
 

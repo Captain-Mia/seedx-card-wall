@@ -1729,6 +1729,7 @@ const projectData = [
 
 const state = {
   activeTab: "people",
+  peopleQuery: "",
 };
 
 const avatarColors = ["teal", "coral", "pink", "blue", "amber", "green"];
@@ -1802,6 +1803,30 @@ function chipList(items, className) {
   return (items ?? [])
     .map((item) => `<span class="chip ${className}">${escapeHtml(item)}</span>`)
     .join("");
+}
+
+function personSearchText(person) {
+  return [
+    person.number,
+    person.name,
+    person.city,
+    person.mbti,
+    person.status,
+    person.doing,
+    ...(person.value ?? []),
+    ...(person.interests ?? []),
+    ...(person.lookingFor ?? []),
+    ...(person.tags ?? []),
+  ]
+    .join(" ")
+    .toLowerCase();
+}
+
+function getFilteredPeople() {
+  const query = normalize(state.peopleQuery);
+  if (!query) return peopleData;
+
+  return peopleData.filter((person) => personSearchText(person).includes(query));
 }
 
 function personNameBadge(person) {
@@ -1902,10 +1927,12 @@ function renderProjectCard(project) {
 }
 
 function render() {
-  document.querySelector("#peopleGrid").innerHTML = peopleData.map(renderPersonCard).join("");
+  const filteredPeople = getFilteredPeople();
+  document.querySelector("#peopleGrid").innerHTML = filteredPeople.map(renderPersonCard).join("");
   document.querySelector("#projectsGrid").innerHTML = projectData.map(renderProjectCard).join("");
-  document.querySelector("#peopleBadge").textContent = peopleData.length;
+  document.querySelector("#peopleBadge").textContent = filteredPeople.length;
   document.querySelector("#projectsBadge").textContent = projectData.length;
+  document.querySelector("#peopleEmpty").hidden = filteredPeople.length > 0;
 }
 
 function setActiveTab(tabName) {
@@ -1921,6 +1948,11 @@ function setActiveTab(tabName) {
 
 document.querySelectorAll(".tab-button").forEach((button) => {
   button.addEventListener("click", () => setActiveTab(button.dataset.tab));
+});
+
+document.querySelector("#peopleSearch").addEventListener("input", (event) => {
+  state.peopleQuery = event.target.value;
+  render();
 });
 
 render();
