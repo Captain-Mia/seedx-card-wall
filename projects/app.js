@@ -112,7 +112,7 @@ const projectData = [
     name: "公益助盲项目",
     stage: "志愿者招募期",
     stageKey: "trial",
-    summary: "通过工艺活动帮助视障群体。",
+    summary: "通过公益活动帮助视障群体。",
     progress: "正在招募志愿者，提供小额补贴支持。",
     seeking: ["志愿者"],
     direction: ["公益", "助盲", "工艺活动"],
