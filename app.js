@@ -1602,6 +1602,52 @@ const peopleData = [
       "产品运营"
     ],
     "tags": []
+  },
+  {
+    "number": "SeedX 070",
+    "name": "andfish",
+    "city": "杭州·余杭",
+    "mbti": "ENFJ",
+    "status": "创业中",
+    "doing": "一个链接品牌商家和素人种草的任务平台",
+    "value": [
+      "品牌宣传推广",
+      "素人种草宣传",
+      "产品设计",
+      "应用开发"
+    ],
+    "interests": [
+      "AI Agent",
+      "自媒体",
+      "电商服务"
+    ],
+    "lookingFor": [
+      "技术合伙人",
+      "素人博主",
+      "品牌方",
+      "运营合伙人"
+    ],
+    "tags": []
+  },
+  {
+    "number": "SeedX 071",
+    "name": "Mzz",
+    "city": "杭州·萧山",
+    "mbti": "ISTP",
+    "status": "创业中",
+    "doing": "整合供应链，调研第三方平台、独立站、社媒平台，开发独立站搭建，做 SEO 和 GEO 运营。",
+    "value": [
+      "供应链资源"
+    ],
+    "interests": [
+      "AI Agent",
+      "工厂出海"
+    ],
+    "lookingFor": [
+      "运营合伙人",
+      "技术合伙人"
+    ],
+    "tags": []
   }
 ];
 
