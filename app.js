@@ -1676,6 +1676,49 @@ const peopleData = [
       "有想法的人"
     ],
     "tags": []
+  },
+  {
+    "number": "SeedX 073",
+    "name": "矿泉水",
+    "city": "杭州·滨江",
+    "mbti": "ENFJ",
+    "status": "筹备饰品创业",
+    "doing": "调研饰品货源，学习店铺运营",
+    "value": [
+      "产品设计",
+      "视觉拍摄方案"
+    ],
+    "interests": [
+      "原创饰品",
+      "跨境电商",
+      "自媒体轻创业"
+    ],
+    "lookingFor": [
+      "饰品创业者",
+      "运营合伙人",
+      "货源供应商",
+      "女性轻创业同好"
+    ],
+    "tags": []
+  },
+  {
+    "number": "SeedX 074",
+    "name": "leon",
+    "city": "杭州",
+    "mbti": "未知",
+    "status": "兼职创业",
+    "doing": "RAG 知识库，DTC 独立站竞品监控 SaaS 工具",
+    "value": [
+      "技术开发"
+    ],
+    "interests": [
+      "跨境电商",
+      "AI 开发"
+    ],
+    "lookingFor": [
+      "DTC 独立站运营"
+    ],
+    "tags": []
   }
 ];
 
