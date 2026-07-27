@@ -628,7 +628,9 @@ const peopleData = [
       "缺主播",
       "缺拍摄"
     ],
-    "tags": []
+    "tags": [
+      "电商主理人"
+    ]
   },
   {
     "number": "SeedX 028",
@@ -1162,7 +1164,7 @@ const peopleData = [
     "number": "SeedX 051",
     "name": "乐昕",
     "city": "杭州·萧山",
-    "mbti": "/",
+    "mbti": "ENFP",
     "status": "个人OPC/Gap兼职",
     "doing": "探索中",
     "value": [
@@ -1189,7 +1191,9 @@ const peopleData = [
       "营销成交伙伴",
       "行动力强伙伴"
     ],
-    "tags": []
+    "tags": [
+      "访谈主理人"
+    ]
   },
   {
     "number": "SeedX 052",
