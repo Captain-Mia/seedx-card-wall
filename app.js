@@ -1648,6 +1648,30 @@ const peopleData = [
       "技术合伙人"
     ],
     "tags": []
+  },
+  {
+    "number": "SeedX 072",
+    "name": "初九",
+    "city": "杭州",
+    "mbti": "ISTJ",
+    "status": "即将GAP",
+    "doing": "旅行充电，思考之后想要做什么",
+    "value": [
+      "内容创作",
+      "账号运营"
+    ],
+    "interests": [
+      "自媒体",
+      "线下活动",
+      "电商",
+      "实体店"
+    ],
+    "lookingFor": [
+      "有趣的人",
+      "可爱的人",
+      "有想法的人"
+    ],
+    "tags": []
   }
 ];
 
