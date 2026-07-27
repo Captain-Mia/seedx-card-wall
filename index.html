@@ -34,6 +34,16 @@
             共创项目
             <span class="badge" id="projectsBadge">0</span>
           </button>
+          <button class="tab-button" type="button" data-tab="activities">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+              <path d="M8 2v4" />
+              <path d="M16 2v4" />
+              <rect x="3" y="4" width="18" height="18" rx="2" />
+              <path d="M3 10h18" />
+            </svg>
+            近期活动
+            <span class="badge" id="activitiesBadge">0</span>
+          </button>
         </div>
       </section>
 
@@ -54,8 +64,31 @@
       <section id="projectsPanel" class="panel" aria-label="共创项目">
         <div class="card-grid" id="projectsGrid"></div>
       </section>
+
+      <section id="activitiesPanel" class="panel" aria-label="近期活动">
+        <div class="activity-grid" id="activitiesGrid"></div>
+      </section>
     </main>
 
+    <div class="modal-backdrop" id="activityModal" hidden>
+      <div
+        class="activity-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="activityModalTitle"
+        tabindex="-1"
+      >
+        <button class="modal-close" type="button" id="activityModalClose" aria-label="关闭活动详情">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true">
+            <path d="M18 6 6 18" />
+            <path d="m6 6 12 12" />
+          </svg>
+        </button>
+        <div id="activityModalContent"></div>
+      </div>
+    </div>
+
+    <script src="./activities.js"></script>
     <script src="./app.js"></script>
   </body>
 </html>

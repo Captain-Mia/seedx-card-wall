@@ -50,6 +50,10 @@ body {
     "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
 }
 
+body.modal-open {
+  overflow: hidden;
+}
+
 button,
 input,
 select {
@@ -105,7 +109,7 @@ h1 {
 
 .tabs {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 8px;
 }
 
@@ -215,8 +219,15 @@ h1 {
   gap: 16px;
 }
 
+.activity-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
 .person-card,
-.project-card {
+.project-card,
+.activity-card {
   border: 1px solid transparent;
   border-radius: 14px;
   background: var(--bg-primary);
@@ -229,7 +240,8 @@ h1 {
 }
 
 .person-card:hover,
-.project-card:hover {
+.project-card:hover,
+.activity-card:hover {
   transform: translateY(-2px);
   border-color: rgba(15, 107, 90, 0.42);
   box-shadow: var(--shadow-hover);
@@ -480,6 +492,82 @@ h1 {
   padding: 22px;
 }
 
+.activity-card {
+  display: grid;
+  gap: 15px;
+  padding: 22px;
+}
+
+.activity-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.activity-title {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 18px;
+  font-weight: 850;
+  line-height: 1.35;
+}
+
+.activity-value {
+  margin: 0;
+  padding: 13px 14px;
+  border-left: 3px solid var(--accent);
+  border-radius: 11px;
+  background: var(--teal-soft);
+  color: var(--text-primary);
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 1.7;
+}
+
+.activity-meta {
+  display: grid;
+  gap: 9px;
+}
+
+.activity-meta-row {
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr);
+  gap: 10px;
+  color: var(--text-primary);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.activity-meta-label {
+  color: var(--text-secondary);
+  font-weight: 800;
+}
+
+.activity-meta-text {
+  font-weight: 700;
+}
+
+.activity-button {
+  justify-self: start;
+  min-height: 38px;
+  padding: 0 14px;
+  border: 0;
+  border-radius: 12px;
+  background: var(--accent-strong);
+  color: var(--text-on-dark);
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 850;
+}
+
+.activity-button:focus-visible,
+.tab-button:focus-visible,
+.modal-close:focus-visible {
+  outline: 3px solid rgba(34, 197, 94, 0.42);
+  outline-offset: 3px;
+}
+
 .project-header {
   display: flex;
   align-items: flex-start;
@@ -552,6 +640,30 @@ h1 {
   color: var(--gray);
 }
 
+.status-badge {
+  flex: 0 0 auto;
+  padding: 5px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 850;
+  white-space: nowrap;
+}
+
+.status-open {
+  background: var(--green-soft);
+  color: #376d2d;
+}
+
+.status-soon {
+  background: var(--amber-soft);
+  color: #8b5b0c;
+}
+
+.status-ended {
+  background: var(--gray-soft);
+  color: var(--gray);
+}
+
 .project-section {
   margin-top: 15px;
 }
@@ -565,6 +677,175 @@ h1 {
   color: var(--text-primary);
   font-size: 13px;
   line-height: 1.7;
+}
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: rgba(5, 35, 29, 0.72);
+}
+
+.modal-backdrop[hidden] {
+  display: none;
+}
+
+.activity-dialog {
+  position: relative;
+  width: min(860px, 100%);
+  max-height: min(86vh, 860px);
+  overflow: auto;
+  border-radius: 18px;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.34);
+}
+
+.modal-close {
+  position: sticky;
+  top: 14px;
+  float: right;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  margin: 14px 14px 0 0;
+  border: 0;
+  border-radius: 12px;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  cursor: pointer;
+  z-index: 2;
+}
+
+.modal-close svg {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+}
+
+.activity-detail {
+  padding: 28px;
+}
+
+.activity-detail-header {
+  display: grid;
+  gap: 11px;
+  padding-right: 48px;
+  margin-bottom: 22px;
+}
+
+.activity-detail-title {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: clamp(1.6rem, 4vw, 2.35rem);
+  line-height: 1.18;
+  font-weight: 900;
+}
+
+.activity-detail-value {
+  margin: 0;
+  color: var(--accent-strong);
+  font-size: 16px;
+  font-weight: 850;
+  line-height: 1.7;
+}
+
+.detail-section {
+  margin-top: 22px;
+}
+
+.detail-section-title {
+  margin: 0 0 10px;
+  color: var(--text-primary);
+  font-size: 15px;
+  font-weight: 850;
+}
+
+.detail-paragraph {
+  margin: 0 0 8px;
+  color: var(--text-primary);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.detail-list {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.detail-list li {
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.schedule-list {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.schedule-item {
+  display: grid;
+  grid-template-columns: 70px minmax(0, 1fr);
+  gap: 12px;
+  padding: 12px;
+  border-left: 3px solid var(--accent);
+  border-radius: 10px;
+  background: var(--teal-soft);
+}
+
+.schedule-time {
+  color: var(--accent-strong);
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.schedule-name {
+  color: var(--text-primary);
+  font-size: 14px;
+  font-weight: 750;
+  line-height: 1.55;
+}
+
+.info-card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.info-card {
+  padding: 12px;
+  border-radius: 11px;
+  background: var(--bg-quiet);
+  border: 1px solid var(--border-light);
+}
+
+.info-card-label {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--text-secondary);
+  font-size: 12px;
+  font-weight: 850;
+}
+
+.info-card-value {
+  color: var(--text-primary);
+  font-size: 14px;
+  font-weight: 750;
+  line-height: 1.5;
 }
 
 .empty-state {
@@ -625,8 +906,17 @@ h1 {
     grid-template-columns: 1fr;
   }
 
+  .activity-grid,
+  .info-card-grid {
+    grid-template-columns: 1fr;
+  }
+
   .tab-shell {
     position: static;
+  }
+
+  .tabs {
+    grid-template-columns: 1fr;
   }
 
   .card-header {
@@ -635,5 +925,29 @@ h1 {
 
   .identity-side {
     white-space: normal;
+  }
+
+  .modal-backdrop {
+    align-items: stretch;
+    padding: 12px;
+  }
+
+  .activity-dialog {
+    max-height: calc(100vh - 24px);
+    border-radius: 16px;
+  }
+
+  .activity-detail {
+    padding: 22px 18px 24px;
+  }
+
+  .activity-detail-header {
+    padding-right: 44px;
+  }
+
+  .activity-meta-row,
+  .schedule-item {
+    grid-template-columns: 1fr;
+    gap: 4px;
   }
 }

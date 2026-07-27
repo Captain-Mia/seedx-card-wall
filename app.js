@@ -1847,7 +1847,10 @@ const projectData = [
 const state = {
   activeTab: "people",
   peopleQuery: "",
+  lastActivityTrigger: null,
 };
+
+const activitiesData = window.activityData ?? [];
 
 const avatarColors = ["teal", "coral", "pink", "blue", "amber", "green"];
 const stageClassMap = {
@@ -1920,6 +1923,12 @@ function chipList(items, className) {
   return (items ?? [])
     .map((item) => `<span class="chip ${className}">${escapeHtml(item)}</span>`)
     .join("");
+}
+
+function asArray(value) {
+  if (Array.isArray(value)) return value;
+  if (value === undefined || value === null || value === "") return [];
+  return [value];
 }
 
 function personSearchText(person) {
@@ -2043,12 +2052,191 @@ function renderProjectCard(project) {
   `;
 }
 
+function getActivityStatusClass(status) {
+  if (status === "报名中") return "status-open";
+  if (status === "已结束") return "status-ended";
+  return "status-soon";
+}
+
+function renderActivityCard(activity) {
+  const statusClass = getActivityStatusClass(activity.status);
+  const audience = asArray(activity.audience).join("、");
+  const timeText = [activity.date, activity.time].filter(Boolean).join("｜");
+
+  return `
+    <article class="activity-card">
+      <div class="activity-card-top">
+        <span class="stage-badge stage-launch">${escapeHtml(activity.category)}</span>
+        <span class="status-badge ${statusClass}">${escapeHtml(activity.status)}</span>
+      </div>
+      <h2 class="activity-title">${escapeHtml(activity.title)}</h2>
+      <p class="activity-value">${escapeHtml(activity.value)}</p>
+      <section class="activity-meta" aria-label="${escapeHtml(activity.title)}活动摘要">
+        <div class="activity-meta-row">
+          <span class="activity-meta-label">内容标签</span>
+          <div class="chip-row">${chipList(activity.highlights, "chip-teal")}</div>
+        </div>
+        <div class="activity-meta-row">
+          <span class="activity-meta-label">活动时间</span>
+          <span class="activity-meta-text">${escapeHtml(timeText || "待公布")}</span>
+        </div>
+        <div class="activity-meta-row">
+          <span class="activity-meta-label">适合</span>
+          <span class="activity-meta-text">${escapeHtml(audience || "待公布")}</span>
+        </div>
+      </section>
+      <button class="activity-button" type="button" data-activity-id="${escapeHtml(activity.id)}">
+        查看详情 →
+      </button>
+    </article>
+  `;
+}
+
+function renderDetailParagraphs(items) {
+  return asArray(items)
+    .map((item) => `<p class="detail-paragraph">${escapeHtml(item)}</p>`)
+    .join("");
+}
+
+function renderDetailList(items) {
+  return `
+    <ul class="detail-list">
+      ${asArray(items).map((item) => `<li>${escapeHtml(item)}</li>`).join("")}
+    </ul>
+  `;
+}
+
+function renderSchedule(items) {
+  return `
+    <ul class="schedule-list">
+      ${asArray(items)
+        .map((item) => `
+          <li class="schedule-item">
+            <span class="schedule-time">${escapeHtml(item.time)}</span>
+            <span class="schedule-name">${escapeHtml(item.item)}</span>
+          </li>
+        `)
+        .join("")}
+    </ul>
+  `;
+}
+
+function renderInfoCards(activity) {
+  const info = [
+    ["时间", [activity.date, activity.time].filter(Boolean).join("｜") || "待公布"],
+    ["地点", activity.location],
+    ["活动形式", activity.format],
+    ["限定人数", activity.capacity],
+    ["活动费用", activity.price],
+    ["准备事项", activity.preparation],
+  ];
+
+  return `
+    <div class="info-card-grid">
+      ${info
+        .map(([label, value]) => `
+          <div class="info-card">
+            <span class="info-card-label">${escapeHtml(label)}</span>
+            <span class="info-card-value">${escapeHtml(value || "待公布")}</span>
+          </div>
+        `)
+        .join("")}
+    </div>
+  `;
+}
+
+function renderActivityDetail(activity) {
+  const audience = asArray(activity.audience);
+
+  return `
+    <article class="activity-detail">
+      <header class="activity-detail-header">
+        <span class="stage-badge stage-launch">${escapeHtml(activity.category)}</span>
+        <h2 class="activity-detail-title" id="activityModalTitle">${escapeHtml(activity.title)}</h2>
+        <p class="activity-detail-value">${escapeHtml(activity.value)}</p>
+      </header>
+      <section class="detail-section">
+        <h3 class="detail-section-title">活动主题与价值</h3>
+        <p class="detail-paragraph">${escapeHtml(activity.value)}</p>
+      </section>
+      <section class="detail-section">
+        <h3 class="detail-section-title">活动详细介绍</h3>
+        ${renderDetailParagraphs(activity.description)}
+      </section>
+      <section class="detail-section">
+        <h3 class="detail-section-title">你会获得什么</h3>
+        ${renderDetailList(activity.gains)}
+      </section>
+      <section class="detail-section">
+        <h3 class="detail-section-title">适合参与的人</h3>
+        ${renderDetailList(audience.length ? audience : ["待公布"])}
+      </section>
+      <section class="detail-section">
+        <h3 class="detail-section-title">活动流程安排</h3>
+        ${renderSchedule(activity.schedule)}
+      </section>
+      <section class="detail-section">
+        <h3 class="detail-section-title">时间、地点、人数和费用</h3>
+        ${renderInfoCards(activity)}
+      </section>
+    </article>
+  `;
+}
+
+function openActivityDetail(activityId, trigger) {
+  const activity = activitiesData.find((item) => item.id === activityId);
+  if (!activity) return;
+
+  state.lastActivityTrigger = trigger;
+  document.querySelector("#activityModalContent").innerHTML = renderActivityDetail(activity);
+  document.querySelector("#activityModal").hidden = false;
+  document.body.classList.add("modal-open");
+  document.querySelector("#activityModalClose").focus();
+}
+
+function closeActivityDetail() {
+  document.querySelector("#activityModal").hidden = true;
+  document.body.classList.remove("modal-open");
+  document.querySelector("#activityModalContent").innerHTML = "";
+  state.lastActivityTrigger?.focus();
+  state.lastActivityTrigger = null;
+}
+
+function handleModalKeydown(event) {
+  if (event.key === "Escape") {
+    closeActivityDetail();
+    return;
+  }
+
+  if (event.key !== "Tab") return;
+
+  const modal = document.querySelector("#activityModal");
+  if (modal.hidden) return;
+
+  const focusable = modal.querySelectorAll(
+    'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+  );
+  const first = focusable[0];
+  const last = focusable[focusable.length - 1];
+  if (!first || !last) return;
+
+  if (event.shiftKey && document.activeElement === first) {
+    event.preventDefault();
+    last.focus();
+  } else if (!event.shiftKey && document.activeElement === last) {
+    event.preventDefault();
+    first.focus();
+  }
+}
+
 function render() {
   const filteredPeople = getFilteredPeople();
   document.querySelector("#peopleGrid").innerHTML = filteredPeople.map(renderPersonCard).join("");
   document.querySelector("#projectsGrid").innerHTML = projectData.map(renderProjectCard).join("");
+  document.querySelector("#activitiesGrid").innerHTML = activitiesData.map(renderActivityCard).join("");
   document.querySelector("#peopleBadge").textContent = filteredPeople.length;
   document.querySelector("#projectsBadge").textContent = projectData.length;
+  document.querySelector("#activitiesBadge").textContent = activitiesData.length;
   document.querySelector("#peopleEmpty").hidden = filteredPeople.length > 0;
 }
 
@@ -2061,6 +2249,7 @@ function setActiveTab(tabName) {
 
   document.querySelector("#peoplePanel").classList.toggle("is-active", tabName === "people");
   document.querySelector("#projectsPanel").classList.toggle("is-active", tabName === "projects");
+  document.querySelector("#activitiesPanel").classList.toggle("is-active", tabName === "activities");
 }
 
 document.querySelectorAll(".tab-button").forEach((button) => {
@@ -2071,5 +2260,19 @@ document.querySelector("#peopleSearch").addEventListener("input", (event) => {
   state.peopleQuery = event.target.value;
   render();
 });
+
+document.querySelector("#activitiesGrid").addEventListener("click", (event) => {
+  const button = event.target.closest("[data-activity-id]");
+  if (!button) return;
+  openActivityDetail(button.dataset.activityId, button);
+});
+
+document.querySelector("#activityModalClose").addEventListener("click", closeActivityDetail);
+
+document.querySelector("#activityModal").addEventListener("click", (event) => {
+  if (event.target.id === "activityModal") closeActivityDetail();
+});
+
+document.addEventListener("keydown", handleModalKeydown);
 
 render();
