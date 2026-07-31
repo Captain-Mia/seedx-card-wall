@@ -1776,6 +1776,52 @@ const peopleData = [
       "产品合作伙伴"
     ],
     "tags": []
+  },
+  {
+    "number": "SeedX 077",
+    "name": "安娜",
+    "city": "杭州",
+    "mbti": "INTP",
+    "status": "创业中",
+    "doing": "通过碰一碰 + AI 技术做 B 端营销解决方案",
+    "value": [
+      "Vibe Coding",
+      "AI 软硬件",
+      "B 端产品经理"
+    ],
+    "interests": [
+      "AI",
+      "自媒体",
+      "线下活动"
+    ],
+    "lookingFor": [
+      "AI 行业友商",
+      "想做 AI 化升级的老板",
+      "对 AI 商业化落地感兴趣的伙伴"
+    ],
+    "tags": []
+  },
+  {
+    "number": "SeedX 078",
+    "name": "蔡蔡",
+    "city": "云南·昆明",
+    "mbti": "ENFP",
+    "status": "轻创业初期",
+    "doing": "在卖咖啡豆",
+    "value": [
+      "小红书素人做账号经验分享",
+      "优质咖啡相关产品"
+    ],
+    "interests": [
+      "私域销售",
+      "自媒体"
+    ],
+    "lookingFor": [
+      "在做自己账号的朋友",
+      "喜欢喝咖啡的朋友",
+      "喜欢摄影的朋友"
+    ],
+    "tags": []
   }
 ];
 
