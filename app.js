@@ -1799,7 +1799,8 @@ const peopleData = [
       "想做 AI 化升级的老板",
       "对 AI 商业化落地感兴趣的伙伴"
     ],
-    "tags": []
+    "tags": [],
+    "painPoint": "链接对AI商业化落地感兴趣的伙伴大家好呀～"
   },
   {
     "number": "SeedX 078",
@@ -2042,6 +2043,7 @@ function personSearchText(person) {
     person.mbti,
     person.status,
     person.doing,
+    person.painPoint,
     ...(person.value ?? []),
     ...(person.interests ?? []),
     ...(person.lookingFor ?? []),
@@ -2111,6 +2113,12 @@ function renderPersonCard(person, index) {
           ${sectionTitle(icons.user, "想链接")}
           <div class="chip-row">${chipList(person.lookingFor, "chip-amber")}</div>
         </section>
+        ${person.painPoint ? `
+          <section>
+            ${sectionTitle("💬", "卡点和需求")}
+            <p class="project-box">${escapeHtml(person.painPoint)}</p>
+          </section>
+        ` : ""}
       </div>
     </article>
   `;
