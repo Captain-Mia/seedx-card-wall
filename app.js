@@ -1799,8 +1799,7 @@ const peopleData = [
       "想做 AI 化升级的老板",
       "对 AI 商业化落地感兴趣的伙伴"
     ],
-    "tags": [],
-    "painPoint": "链接对AI商业化落地感兴趣的伙伴大家好呀～"
+    "tags": []
   },
   {
     "number": "SeedX 078",
