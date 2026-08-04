@@ -1822,6 +1822,28 @@ const peopleData = [
       "喜欢摄影的朋友"
     ],
     "tags": []
+  },
+  {
+    "number": "SeedX 079",
+    "name": "苏正",
+    "city": "杭州·余杭",
+    "mbti": "INFJ",
+    "status": "稳定中 + 寻找项目",
+    "doing": "基金会",
+    "value": [
+      "AI 产品开发",
+      "资源对接"
+    ],
+    "interests": [
+      "AI 各种领域",
+      "自媒体",
+      "线下质量活动",
+      "线上质量活动"
+    ],
+    "lookingFor": [
+      "AI 领域伙伴"
+    ],
+    "tags": []
   }
 ];
 
